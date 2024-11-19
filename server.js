@@ -1,6 +1,6 @@
 const express = require('express');
-const knex = require('knex');
-const knexConfig = require('./Knexfile');  // Assuming knexfile is correct
+const knex = require('knex')(require('./knexfile.js')["development"])
+const port = 3000;
 
 const db = knex(knexConfig);
 
@@ -17,7 +17,7 @@ app.get('/api/superheroes', async (req, res) => {
   }
 });
 
-const port = 3000;
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
