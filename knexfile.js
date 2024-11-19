@@ -6,12 +6,14 @@
 module.exports = {
 
   development: {
-    client: 'postgres',
+    client: 'postgresql',
+    //connection: 'postgresql://postgres:docker@localhost:5432/superheroes'
     connection: {
-      host: '127.0.0.1', // or 'localhost'
+      host:'localhost',
       user: 'postgres',
-      password: 'docker',
+      password: " docker ",
       database: 'superheroes',
+      port: '5432',
   },
 },
 
@@ -20,7 +22,7 @@ module.exports = {
     connection: {
       database: 'my_db',
       user:     'username',
-      password: 'password'
+      password: 'docker'
     },
     pool: {
       min: 2,
@@ -36,7 +38,7 @@ module.exports = {
     connection: {
       database: 'my_db',
       user:     'username',
-      password: 'password'
+      password: 'docker'
     },
     pool: {
       min: 2,
